@@ -12,21 +12,38 @@
     </head>
     <body>
         <h1>Welcome to Pigs!</h1>
-        <form id="addPlayers"> 
-            <label for="name"></label>What's your name? 
-            <input type="text" id="name" name="name"></input>
-            <button type="button" id="nameButton">Join</button>
-        </form>
-        <form id="startGame"> 
-            <button type="button" id="startButton">Everyone's here. Start the Game!</button>
-        </form>
-        <table id=scoreTable>
-            <tr>
-              <th>Name</th>
-              <th>Score</th>
-            </tr>
-        </table>
-        <canvas id="canvas"></canvas>
+        <span id="gamePrep">
+            <form id="addPlayers"> 
+                <label for="name"></label>What's your name? 
+                <input type="text" id="name" name="name"></input>
+                <button type="button" id="nameButton">Join</button>
+            </form>
+            <form id="startGame"> 
+                <button type="button" id="startButton">Everyone's here. Start the Game!</button>
+            </form>
+        </span>
+
+        <!-- <span id="turn">
+            <h2 id="turnText"></h2>
+            <h2>Turn Total: </h2>
+            <h2 id="turnTotal"></h2>
+        </span> -->
+        <span id="score">
+            <table id=scoreTable>
+                <tr>
+                <th>Name</th>
+                <th>Score</th>
+                </tr>
+            </table>
+        </span>
+        <span id="pig1"> 
+            <p id="pig1Name"></p>
+            <img id="pig1Pic" width="300">
+        </span>
+        <span id="pig2"> 
+            <p id="pig2Name"></p>
+            <img id="pig2Pic" width="300">
+        </span>
     </body>
     <script src="/static/game.js"></script>
 </html>

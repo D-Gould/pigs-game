@@ -21,41 +21,23 @@ server.listen(5000, function() {
     console.log('Starting server on port 5000');
 });
 
-var players = {}
+var players = []
 io.on('connection', function(socket) {
     console.log("connected!")
     const colors = ['red', 'green', 'blue', 'purple']
-    let playerNumber = 1
     socket.on('new player', function(name) {
-        players[socket.id] = {
-            x: 300,
-            y: 300,
+        players.push({
+            id: socket.id,
             color: colors[Math.floor(Math.random()*colors.length)],
             name: name,
             score: 0
-        }
-        playerNumber += 1
+        })
         console.log("new player!", players)
-        io.sockets.emit('updateScore', players);
-    })
-
-    // socket.on('movement', function(data) {
-    //     var player = players[socket.id] || {};
-    //     if (data.left) {
-    //         player.x -= 5;
-    //     }
-    //     if (data.up) {
-    //         player.y -=5
-    //     }
-    //     if (data.right) {
-    //         player.x += 5;
-    //     }
-    //     if (data.down) {
-    //         player.y +=5
-    //     }
+        io.sockets.emit('updatePlayers', players);
+    });
+    // socket.on('players', function() {
+    //     io.sockets.emit('updatePlayers', players)
     // })
-})
 
-// setInterval(function() {
-//     io.sockets.emit('state', players);
-// }, 1000 / 60)
+   
+})
