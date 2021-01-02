@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>A multiplayer game</title>
+        <style>
+            canvas {
+                width: 800px;
+                height: 600px;
+                border: 5px solid black;
+            }
+        </style>
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <h1>Welcome to Pigs!</h1>
+        <form id="addPlayers"> 
+            <label for="name"></label>What's your name? 
+            <input type="text" id="name" name="name"></input>
+            <button type="button" id="nameButton">Join</button>
+        </form>
+        <form id="startGame"> 
+            <button type="button" id="startButton">Everyone's here. Start the Game!</button>
+        </form>
+        <table id=scoreTable>
+            <tr>
+              <th>Name</th>
+              <th>Score</th>
+            </tr>
+        </table>
+        <canvas id="canvas"></canvas>
+    </body>
+    <script src="/static/game.js"></script>
+</html>
