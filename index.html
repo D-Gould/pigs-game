@@ -9,10 +9,12 @@
             }
         </style>
         <script src="/socket.io/socket.io.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     </head>
     <body>
         <h1>Welcome to Pigs!</h1>
-        <span id="gamePrep">
+        <div id="gamePrep">
             <form id="addPlayers"> 
                 <label for="name"></label>What's your name? 
                 <input type="text" id="name" name="name"></input>
@@ -21,29 +23,28 @@
             <form id="startGame"> 
                 <button type="button" id="startButton">Everyone's here. Start the Game!</button>
             </form>
-        </span>
+        </div>
 
-        <!-- <span id="turn">
-            <h2 id="turnText"></h2>
-            <h2>Turn Total: </h2>
-            <h2 id="turnTotal"></h2>
-        </span> -->
-        <span id="score">
+        <div id="turn" style="display:none;">
+            <h2 id="turnName"></h2>
+            <p id="turnTotal"> Turn Total: 0</p>
+        </div>
+        <div id="score">
             <table id=scoreTable>
                 <tr>
                 <th>Name</th>
                 <th>Score</th>
                 </tr>
             </table>
-        </span>
-        <span id="pig1"> 
+        </div>
+        <div id="pig1"> 
             <p id="pig1Name"></p>
             <img id="pig1Pic" width="300">
-        </span>
-        <span id="pig2"> 
+        </div>
+        <div id="pig2"> 
             <p id="pig2Name"></p>
             <img id="pig2Pic" width="300">
-        </span>
+        </div>
     </body>
     <script src="/static/game.js"></script>
 </html>
